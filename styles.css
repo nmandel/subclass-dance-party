@@ -1,34 +1,47 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+a {
+  text-decoration: none;
+}
+
 body, html{
   height:100%;
 }
 body{
   margin: 0;
-  background-color:#444;
+  background: url('img/background.png');
   font-size: 18px;
 }
-body, a:link, a:visited, a:active{
-  color: lightblue;
+a:link, a:visited, a:active{
+  color: #283339;
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 0.5px;
+  background: #E4F3EC;
+  margin: 10px;
+  padding: 6px 15px;
 }
 .title, .addDancerButton{
   padding:5px 12px;
   float:right;
 }
 .topbar{
-  height:32px;
-  background-color: #555;
+  height:60px;
+  /*background-color: #555;*/
+  z-index:10000;
+  padding: 0 20px;
 }
 .title{
-  background-color: #777;
+  /*background-color: #777;*/
 }
 .dancer{
-  content: url("img/smooch.gif");
+  content: url("img/girl-with-skipping-rope.png");
   position:absolute;
 }
 .jumpy{
   border: 0;
-  content: url("img/bouncing-dog.gif");
+  content: url("img/girl-with-balloon.png");/*
   width: 100px;
-  height: 100px;
+  height: 100px;*/
 }
 .growing{
   content: url("img/dancing-banana.gif");
@@ -36,5 +49,5 @@ body, a:link, a:visited, a:active{
 
 .lineUpButton{
   padding:5px 12px;
-  float:right;
+  float:left;
 }

@@ -1,15 +1,15 @@
-var RisingDancer = function(top, left, timeBetweenSteps){
+var MovingDancer = function(top, left, timeBetweenSteps){
   Dancer.call(this, top, left, timeBetweenSteps);
   this.top = top;
   this.left = left;
   // this.setPosition(top, left);
-  this.$node[0].className += " jumpy";
+  this.$node[0].className += " moving";
   // this.$node
 };
 
-RisingDancer.prototype = Object.create(Dancer.prototype);
+MovingDancer.prototype = Object.create(Dancer.prototype);
 
-RisingDancer.prototype.step = function(){
+MovingDancer.prototype.step = function(){
   Dancer.prototype.step.call(this);
   this.top -= 5;
   this.setPosition(this.top, this.left);

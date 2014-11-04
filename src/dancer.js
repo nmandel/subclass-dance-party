@@ -40,8 +40,13 @@ Dancer.prototype.lineUp = function (){
   // if (this.width < 550) {
   //   this.width += 0.5;
   // }
-  if (this.left > 0) {
-    this.left -= 10;
-  }
+
+  this.left = 0;
   this.setPosition(this.top, this.left);
+  // Dancer.prototype.step.call(this);
+  // // Dancer.prototype.step.call(this);
+  // if (this.left > 0) {
+  //   this.left -= 10;
+  // }
+  // this.setPosition(this.top, this.left);
 }
