@@ -38,8 +38,17 @@ Dancer.prototype.setPosition = function(top, left){
 };
 
 Dancer.prototype.lineUp = function (){
-  this.left = 0;
-  this.setPosition(this.top, this.left);
+  // this.left = 0;
+  // this.setPosition(this.top, this.left);
+  console.log(this.direction)
+  this.direction = 'trueLeft';
+  window.naughtyGlobalVar = false;
+  // Dancer.prototype.step.call(this);
+  // Dancer.prototype.step.call(this);
+  // if (this.left > 0) {
+  //   this.left -= 10;
+  // }
+  // this.setPosition(this.top, this.left);
 };
 
 Dancer.prototype.enlarge = function(){

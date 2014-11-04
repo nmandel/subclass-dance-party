@@ -1,5 +1,6 @@
 $(document).ready(function(){
   window.dancers = [];
+  window.naughtyGlobalVar = true
 
   $(".addDancerButton").on("click", function(event){
     /* This function sets up the click handlers for the create-dancer
@@ -32,6 +33,7 @@ $(document).ready(function(){
   });
 
   window.collide = function(){
+    if (window.naughtyGlobalVar) {
     for (var i = 0; i < window.dancers.length; i++) {
       // var local = window.dancers[i]
       // console.log(window.dancers[i]);
@@ -68,7 +70,10 @@ $(document).ready(function(){
     // Get dancers' positions
     // if difference between x and y coordinates is less than 50
     // then delete one of the dancers
+    };
   }
+
+  // setInterval(window.collide(), 100);
 
   $(".lineUpButton").on("click", function(event){
     for (var i = 0; i < window.dancers.length; i++) {
