@@ -43,7 +43,20 @@ Dancer.prototype.lineUp = function (){
 };
 
 Dancer.prototype.enlarge = function(){
-  this.$node.mouseover(function(){
-    console.log("hello")
+  this.$node.mouseenter(function(){
+    var styleSettings = {
+      "transform": "scale(1.4)"
+    };
+
+    $(this).css(styleSettings);
+    console.log($(this));
+  });
+  this.$node.mouseleave(function(){
+    var styleSettings = {
+      "transform": "scale(1)"
+    };
+
+    $(this).css(styleSettings);
+    console.log($(this));
   });
 };
