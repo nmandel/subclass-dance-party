@@ -20,6 +20,7 @@ BlinkyDancer.prototype = Object.create(Dancer.prototype);
     this.$node.toggle();
   };
 
+//434 × 558
 
 
 

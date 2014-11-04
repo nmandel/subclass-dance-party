@@ -2,7 +2,7 @@ body, html{
   height:100%;
 }
 body{
-  margin: 0px;
+  margin: 0;
   background-color:#444;
   font-size: 18px;
 }
@@ -21,10 +21,20 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  content: url("img/smooch.gif");
   position:absolute;
 }
 .jumpy{
-  border:10px solid green;
+  border: 0;
+  content: url("img/bouncing-dog.gif");
+  width: 100px;
+  height: 100px;
+}
+.growing{
+  content: url("img/dancing-banana.gif");
+}
+
+.lineUpButton{
+  padding:5px 12px;
+  float:right;
 }

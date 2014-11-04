@@ -11,7 +11,7 @@ RisingDancer.prototype = Object.create(Dancer.prototype);
 
 RisingDancer.prototype.step = function(){
   Dancer.prototype.step.call(this);
-  this.top -= 10;
+  this.top -= 1;
   this.setPosition(this.top, this.left);
 };
 
