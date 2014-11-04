@@ -51,7 +51,7 @@ a:link, a:visited, a:active{
  content: url("img/couple.png");
 }
 
-.lineUpButton{
+.lineUpButton, .collideButton{
   padding:5px 12px;
   float:left;
 }

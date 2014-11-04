@@ -13,6 +13,7 @@ var Dancer = function(top, left, timeBetweenSteps){
   this.timeBetween = timeBetweenSteps;
   this.step();
   this.setPosition(top, left);
+  this.enlarge();
 };
 
 Dancer.prototype.step = function(){
@@ -37,16 +38,12 @@ Dancer.prototype.setPosition = function(top, left){
 };
 
 Dancer.prototype.lineUp = function (){
-  // if (this.width < 550) {
-  //   this.width += 0.5;
-  // }
-
   this.left = 0;
   this.setPosition(this.top, this.left);
-  // Dancer.prototype.step.call(this);
-  // // Dancer.prototype.step.call(this);
-  // if (this.left > 0) {
-  //   this.left -= 10;
-  // }
-  // this.setPosition(this.top, this.left);
-}
+};
+
+Dancer.prototype.enlarge = function(){
+  this.$node.mouseover(function(){
+    console.log("hello")
+  });
+};

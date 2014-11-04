@@ -30,6 +30,46 @@ $(document).ready(function(){
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
   });
+
+  window.collide = function(){
+    for (var i = 0; i < window.dancers.length; i++) {
+      // var local = window.dancers[i]
+      // console.log(window.dancers[i]);
+      // console.log(window.dancers[i].left);
+      for (var j = 0; j < window.dancers.length; j++) {
+
+        if (i !== j) {
+          if (Math.abs(window.dancers[i].left - window.dancers[j].left) < 100 && Math.abs(window.dancers[i].top - window.dancers[j].top) < 100) {
+              // console.log("window.dancers["+i+"]"); console.log(window.dancers[i].left); console.log(window.dancers[i].top);
+              // console.log("window.dancers["+j+"]"); console.log(window.dancers[j].left); console.log(window.dancers[j].top);
+              if (window.dancers[i].direction === 'left') {
+                // console.log("left -> right")
+                window.dancers[i].direction = 'right';
+              }
+              else if (window.dancers[i].direction === 'right') {
+                // console.log("right -> left")
+                window.dancers[i].direction = 'left';
+              }
+              else if (window.dancers[i].direction === 'downAndRight') {
+                // console.log("downAndRight -> leftAndUp")
+                window.dancers[i].direction = 'leftAndUp';
+              }
+              else if (window.dancers[i].direction === 'leftAndUp') {
+                // console.log("leftAndUp -> right")
+                window.dancers[i].direction = 'right';
+              }
+
+
+          };
+          // console.log(window.dancers[i].left, window.dancers[j].left)
+        };
+      };
+    };
+    // Get dancers' positions
+    // if difference between x and y coordinates is less than 50
+    // then delete one of the dancers
+  }
+
   $(".lineUpButton").on("click", function(event){
     for (var i = 0; i < window.dancers.length; i++) {
       // var local = window.dancers[i]
@@ -38,6 +78,9 @@ $(document).ready(function(){
     console.log(window.dancers[0].lineUp());
 
   })
+  // $(".collideButton").on("click", function(event){
+  //   collide();
+  // });
 
 });
 
