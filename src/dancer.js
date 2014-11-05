@@ -1,3 +1,6 @@
+var p = function(input){
+  console.log(input);
+}
 // Creates and returns a new dancer object that can step
 var Dancer = function(top, left, timeBetweenSteps){
 
@@ -5,7 +8,8 @@ var Dancer = function(top, left, timeBetweenSteps){
   this.$node = $('<span class="dancer"></span>');
   this.left = left;
   this.top = top;
-
+  this.leftIncrement = 0;
+  this.topIncrement = 0;
   // now that we have defined the dancer object, we can start
   // setting up important parts of it by calling the methods we wrote
   // this one sets the position to some random default point within the body
@@ -16,14 +20,51 @@ var Dancer = function(top, left, timeBetweenSteps){
   this.enlarge();
 };
 
-Dancer.prototype.step = function(){
+Dancer.prototype.generateIncrement = function (leftMax, topMax, isRandom) {
+  console.log('test')
+  if (isRandom) {
+    this.leftIncrement = Math.floor(Math.random() * 2 * leftMax + 1) - leftMax;
+    this.topIncrement = Math.floor(Math.random() * 2 * topMax + 1) - topMax;
+  } else {
+    this.leftIncrement = leftMax;
+    this.topIncrement = topMax;
+  }
+};
+
+Dancer.prototype.step = function(leftIncrement, topIncrement){
     // the basic dancer doesn't do anything interesting at all on each step,
     // it just schedules the next step
-    // console.log('test')
+
+    if (this.left < 50 || this.left > $("body").width()*0.95){
+      this.leftIncrement = -(this.leftIncrement);
+    }
+    if (this.top < 200 || this.top > $("body").height()*0.95){
+      this.topIncrement = -this.topIncrement;
+    }
+
     var thisCopy = this;
-    // console.log(thisCopy.timeBetweenSteps);
+
+    this.left += this.leftIncrement;
+    this.top += this.topIncrement;
+
+    // if (this.direction === 'trueLeft' && this.left > 50){
+    //   this.left -= Math.random()* 5 * parameter;
+    // }
+    // wallHandler(this.left, this.top)
+    p("hello")
+
     setTimeout(function() {thisCopy.step();}, this.timeBetween);
-  };
+    window.collide();
+
+    };
+    // if (naughtyGlobalVar) {
+
+
+    // }
+    // console.log(thisCopy.timeBetweenSteps);
+
+
+
 
 
 Dancer.prototype.setPosition = function(top, left){
@@ -40,7 +81,7 @@ Dancer.prototype.setPosition = function(top, left){
 Dancer.prototype.lineUp = function (){
   // this.left = 0;
   // this.setPosition(this.top, this.left);
-  console.log(this.direction)
+  // console.log(this.direction)
   this.direction = 'trueLeft';
   window.naughtyGlobalVar = false;
   // Dancer.prototype.step.call(this);
