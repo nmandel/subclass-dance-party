@@ -51,7 +51,6 @@ Dancer.prototype.step = function(leftIncrement, topIncrement){
     //   this.left -= Math.random()* 5 * parameter;
     // }
     // wallHandler(this.left, this.top)
-    p("hello")
 
     setTimeout(function() {thisCopy.step();}, this.timeBetween);
     window.collide();

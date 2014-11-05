@@ -1,10 +1,10 @@
 var RisingDancer = function(top, left, timeBetweenSteps){
-  Dancer.call(this, top, left, timeBetweenSteps);
+  Dancer.call(this, top, left, timeBetweenSteps/20);
   this.top = top;
   this.left = left;
   // this.setPosition(top, left);
   this.$node[0].className += " jumpy";
-  this.generateIncrement(0, -40, false);
+  this.generateIncrement(0, -5, false);
   // this.$node
 };
 
